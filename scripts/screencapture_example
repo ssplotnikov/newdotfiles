@@ -1,0 +1,27 @@
+#!/bin/bash
+
+cd /media/dev/d29ffa2a-5acc-4bc1-aace-05f136c51918/vegapunk/Documents/work/inguru/screencapture
+
+directory=/media/dev/d29ffa2a-5acc-4bc1-aace-05f136c51918/vegapunk/Documents/work/inguru/screencapture
+interval=180
+
+fn=$(date +"%Y-%m-%d")
+
+mkdir -p $fn
+
+path=$directory/$fn
+
+cd $path
+
+while true; do
+    current_time=$(date +%H:%M)
+    if [[ $current_time > 19:00 ]]; then
+        echo Its after 19:00, exiting loop.
+        break
+    else
+        timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+        filename=$directory/$timestamp.png
+        scrot '%Y:%m:%d:%H:%M:%S.png'
+    fi
+    sleep $interval
+done
