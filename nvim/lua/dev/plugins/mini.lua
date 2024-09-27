@@ -13,4 +13,18 @@ return {
 			require("mini.diff").setup()
 		end,
 	},
+	{
+		"echasnovski/mini.icons",
+		version = "*",
+		config = function()
+			require("mini.icons").setup()
+		end,
+	},
+	{
+		"echasnovski/mini.jump2d",
+		version = "*",
+		config = function()
+			require("mini.jump2d").setup()
+		end,
+	},
 }
