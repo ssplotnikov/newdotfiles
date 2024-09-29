@@ -19,6 +19,8 @@
   "mini.jump2d": { "branch": "main", "commit": "b0963aa2ec80b4b1ed1c7f93d9c969bb3f4b65b6" },
   "mini.surround": { "branch": "main", "commit": "3cb5b509ad34f2402df4b977be607a614c8c7524" },
   "multicursor.nvim": { "branch": "1.0", "commit": "88e4e27b021dce741945856ab6f6640b198ea425" },
+  "noice.nvim": { "branch": "main", "commit": "c1ba80ccf6b3bd8c7fc88fe2e61085131d44ad65" },
+  "nui.nvim": { "branch": "main", "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f" },
   "nvim-autopairs": { "branch": "master", "commit": "f158dcb865c36f72c92358f87787dab2c272eaf3" },
   "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
   "nvim-lspconfig": { "branch": "master", "commit": "a9bc587e9ae0cbcb3e90a2e9342f86b3b78c4408" },
