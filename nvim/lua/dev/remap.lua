@@ -6,7 +6,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<C-r>", "hy:%s/<C-r>h//gc<left><left><left>")
 vim.keymap.set("n", "<leader>to", function()
-    vim.opt.scrolloff = 999 - vim.o.scrolloff
+	vim.opt.scrolloff = 999 - vim.o.scrolloff
 end)
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -42,26 +42,27 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
 
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 
 -- statement (or set two remaps for either one). This remap must be made in normal mode.
 vim.keymap.set("n", "<leader>rp", function()
-    require("refactoring").debug.printf({ below = false })
+	require("refactoring").debug.printf({ below = false })
 end)
 
 -- Print var
 
 vim.keymap.set({ "x", "n" }, "<leader>rv", function()
-    require("refactoring").debug.print_var()
+	require("refactoring").debug.print_var()
 end)
 -- Supports both visual and normal mode
 
 vim.keymap.set("n", "<leader>rc", function()
-    require("refactoring").debug.cleanup({})
+	require("refactoring").debug.cleanup({})
 end)
 
 vim.keymap.set("n", "gs", ":%s//g<Left><Left>")
 vim.keymap.set("v", "gs", ":s//g<Left><Left>")
+-- vim.keymap.set("n", "ti", "<cmd>TSToolsAddMissingImports<CR>")

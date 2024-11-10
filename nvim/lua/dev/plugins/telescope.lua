@@ -130,7 +130,21 @@ return {
 			local fb_actions = telescope.extensions.file_browser.actions
 
 			telescope.setup({
+				pickers = {
+					find_files = {
+						hidden = true,
+					},
+				},
 				defaults = {
+					vimgrep_arguments = {
+						"rg",
+						"--color=never",
+						"--no-heading",
+						"--with-filename",
+						"--line-number",
+						"--column",
+						"--smart-case",
+					},
 					theme = "center",
 					sorting_strategy = "ascending",
 					layout_config = {
