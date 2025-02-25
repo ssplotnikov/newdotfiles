@@ -59,6 +59,10 @@ vim.keymap.set({ "x", "n" }, "<leader>rv", function()
 end)
 -- Supports both visual and normal mode
 
+vim.keymap.set({ "n", "x" }, "<leader>r", function()
+	require("refactoring").select_refactor()
+end)
+
 vim.keymap.set("n", "<leader>rc", function()
 	require("refactoring").debug.cleanup({})
 end)
@@ -66,3 +70,34 @@ end)
 vim.keymap.set("n", "gs", ":%s//g<Left><Left>")
 vim.keymap.set("v", "gs", ":s//g<Left><Left>")
 -- vim.keymap.set("n", "ti", "<cmd>TSToolsAddMissingImports<CR>")
+--
+-- COMPILER
+
+-- Open compiler
+vim.api.nvim_set_keymap("n", "<F6>", "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+
+-- Redo last selected option
+vim.api.nvim_set_keymap(
+	"n",
+	"<S-F6>",
+	"<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
+		.. "<cmd>CompilerRedo<cr>",
+	{ noremap = true, silent = true }
+)
+
+-- Toggle compiler results
+vim.api.nvim_set_keymap("n", "<S-F7>", "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+vim.keymap.set("", "<leader>l", function()
+	local config = vim.diagnostic.config() or {}
+	if config.virtual_text then
+		vim.diagnostic.config({ virtual_text = false, virtual_lines = true })
+	else
+		vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
+	end
+end, { desc = "Toggle lsp_lines" })
+
+-- Obsidian
+vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { silent = true })
+vim.keymap.set("n", "<leader>os", "<cmd>ObsidianQuickSwitch<CR>", { silent = true })
+vim.keymap.set("n", "<leader>olf", "<cmd>ObsidianLinkNew<CR>", { silent = true })
+vim.keymap.set("n", "<leader>oln", "<cmd>ObsidianLinkNew<CR>", { silent = true })

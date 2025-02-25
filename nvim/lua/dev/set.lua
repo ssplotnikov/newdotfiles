@@ -3,6 +3,7 @@ vim.opt.guicursor = ""
 -- config.lsp.progress.enabled = false
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt_local.conceallevel = 1
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -31,6 +32,10 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 vim.opt.cursorline = true
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
 -- vim.opt.cursorcolumn = true
 
 -- local opt = vim.opt

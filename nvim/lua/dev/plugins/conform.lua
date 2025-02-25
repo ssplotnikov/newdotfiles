@@ -27,6 +27,7 @@ return {
 				toml = { "taplo" },
 				css = { "prettierd", stop_after_first = true },
 				scss = { "prettierd", stop_after_first = true },
+				cpp = { "clang_format" },
 			},
 		})
 

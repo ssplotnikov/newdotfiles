@@ -80,18 +80,6 @@ console.count({})
 		)
 	),
 
-	s(
-		{ trig = "lg", name = "log group" },
-		fmt(
-			[[
-console.group({})
-{}
-console.groupEnd()
-  ]],
-			{ i(1), i(0) }
-		)
-	),
-
 	s({ trig = "li", name = "log info" }, fmt("console.info({})\n{}", { i(1), i(0) })),
 	s({ trig = "lt", name = "log table" }, fmt("console.table({}, [{}])", { i(1), i(0) })),
 
@@ -106,6 +94,9 @@ console.groupEnd()
 			{ i(0) }
 		)
 	),
+
+	s({ trig = "ok", name = "Object.keys" }, fmt("Object.keys({}){}", { i(1), i(0) })),
+	s({ trig = "ov", name = "Object.values" }, fmt("Object.values({}){}", { i(1), i(0) })),
 
 	s({ trig = "vl", name = "let" }, fmt("let {} = {}\n{}", { i(1), i(2), i(0) })),
 	s({ trig = "vc", name = "const" }, fmt("const {} = {}\n{}", { i(1), i(2), i(0) })),
@@ -188,10 +179,6 @@ console.groupEnd()
 	),
 
 	s({ trig = "tc", name = "type class" }, fmt("class {} {{\n  {}\n}}\n\n{}", { i(1), i(2), i(0) })),
-
-	s({ trig = "jq", name = "jquery" }, fmt("$({}).{}\n\n{}", { i(1), i(2), i(0) })),
-	s({ trig = "ij", name = "import jquery" }, fmt('import $ from "jquery"\n{}', { i(0) })),
-
 	s({ trig = "an", name = "named argument" }, fmt("{} = {}{},\n{}", { i(1), i(2), rep(1), i(0) })),
 
 	s(
@@ -292,6 +279,7 @@ local typescript_snippets = {
 		i(1),
 		t("};"),
 	}),
+
 	s(
 		"lg",
 		fmt("console.log('logging {}: ', {})", {

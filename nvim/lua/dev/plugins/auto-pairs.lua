@@ -1,9 +1,7 @@
-local opts = {
-	disable_filetype = { "TelescopePrompt" },
-}
-
 return {
 	"windwp/nvim-autopairs",
-	opts = opts,
+	opts = {
+		disable_filetype = { "TelescopePrompt" },
+	},
 	event = "InsertEnter",
 }
